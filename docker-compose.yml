@@ -1,0 +1,21 @@
+version: "3"
+services:
+  elastic:
+    hostname: merchant_elastic
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    container_name: merchant_elastic
+    ports:
+      - "9200:9200"
+    image: elasticsearch:7.13.1
+    environment:
+      - discovery.type=single-node
+    networks:
+      merchant:
+        ipv4_address: 172.18.2.2
+networks:
+  merchant:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.2.0/24
