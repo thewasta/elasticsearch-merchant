@@ -3,6 +3,7 @@ import {config} from "dotenv";
 config();
 
                 interface iConfig {
+
                                     host: string;
                                     user?: string;
                                     pass?: string;
