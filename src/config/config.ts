@@ -10,5 +10,5 @@ config();
                                 }
 
                 export default <iConfig>{
-                    host: "http://" + process.env.ELASTIC_HOST as string + ":" + process.env.ELASTIC_PORT
+                    host: 'http://' + process.env.ELASTIC_HOST as string + ":" + process.env.ELASTIC_PORT
                 };
